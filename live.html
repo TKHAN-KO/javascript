@@ -1,0 +1,1722 @@
+<!doctype html>
+<html lang="ko">
+	<head>
+		<title id="browserTitleArea">
+
+
+YTN :: 네이버뉴스
+</title>
+		
+<script>
+	function isMobileDevice() {
+		return /^.*(iPhone|iPod|iPad|Android).*/.test(navigator.userAgent);
+	}
+</script>
+		<script>
+		var g_ssc = 'news.v3_press' || null;
+		</script>
+		<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no,target-densitydpi=medium-dpi"/>
+<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/static.news/mnews/resources/20221208_025917/css/generated/other.css" />
+			<link rel="shortcut icon" type="image/x-icon" href="https://mimgnews.pstatic.net/image/news/m/2014/favicon/favicon.ico" />
+<script>
+	(function(){
+		var userAgent = navigator.userAgent;
+		var result = [];
+
+		if(userAgent.indexOf('Android') > -1){
+			result = [
+				'<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/android_legacy_hdpi_72X72.png" />',
+				'<link rel="apple-touch-icon-precomposed" sizes="96x96" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/android_legacy_xhdpi_96x96.png" />',
+				'<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/android_legacy_xxhpdi_144x144.png" />',
+				'<link rel="apple-touch-icon-precomposed" sizes="192x192" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/android_legacy_xxxhpdi_192x192.png" />'
+			];
+		}else if(userAgent.indexOf('iPhone') > -1){
+			result = [
+				'<link rel="apple-touch-icon-precomposed" sizes="120X120" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/iOS_iPhone_2x_120X120.png" />',
+				'<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/iOS_iPhone_3x_180X180.png" />'
+			];
+		}else if(userAgent.indexOf('iPad') > -1){
+			result = [
+				'<link rel="apple-touch-icon-precomposed" sizes="167x167" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/iOS_iPadPro_2x_167X167.png" />',
+				'<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://ssl.pstatic.net/static.news/image/news/m/2018/favicon/06/iOS_iPad_2x_152X152.png" />'
+			];
+		}
+		document.write(result.join('\n'));
+	})();
+</script>
+
+<script type="text/javascript" src="https://ssl.pstatic.net/static.news/mnews/resources/20221208_025917/js/generated/statistics_jquery.js"></script>
+	
+
+<script>
+
+document.documentElement.setAttribute('data-useragent', navigator.userAgent);
+
+
+function showNoImage(elImg, type) {
+    switch (type) {
+        
+        case "remove":
+            try {
+                elImg.parentNode.removeChild(elImg);
+            } catch(e) {}
+            break;
+
+        
+        case "removeParent":
+            try {
+                elImg.parentNode.outerHTML = '';
+            } catch(e) {}
+            break;
+
+        
+        case "alt":
+            elImg.outerHTML = ('<span class="noimage_text {imgClassName}">' + (elImg.alt || "") + '</span>')
+                
+                .replace('{imgClassName}', elImg.className);
+            break;
+
+		
+		case "class" :
+			var outerHTMLSource = Number(elImg.getAttribute("height")) > 0?
+				
+				'<span class="noimage_wrap {imgClassName}" style="height:' + elImg.getAttribute("height") + 'px;"><span class="noimage"></span></span>':
+				'<span class="noimage_wrap {imgClassName}"><span class="noimage"></span></span>';
+			elImg.outerHTML = outerHTMLSource.replace('{imgClassName}', elImg.className);
+			break;
+
+        
+        default:
+            
+            elImg.outerHTML = Number(elImg.getAttribute("height")) > 0?
+                
+                '<span class="noimage_wrap" style="height:' + elImg.getAttribute("height") + 'px;"><span class="noimage"></span></span>':
+                '<span class="noimage_wrap"><span class="noimage"></span></span>';
+    }
+}
+
+
+function doAfterLoadEnd(callback, callbackOnPersisted) {
+    var eventName = "onpageshow" in window ? "pageshow" : "load";
+
+    callback = callback || function(){};
+    callbackOnPersisted = callbackOnPersisted || function(){};
+
+    window.addEventListener(eventName, function(e) {
+        try{
+            if(Boolean(e.persisted)){  
+                callbackOnPersisted();
+                return;
+            }
+        }catch(e){}
+
+        callback();
+    });
+}
+</script>
+		
+
+
+
+    
+        
+        
+            <script type="text/javascript" src="https://ssl.pstatic.net/static.news/mnews/resources/20221208_025917/js/generated/news.mobile.js"></script>
+        
+            <script type="text/javascript" src="https://ssl.pstatic.net/static.news/mnews/resources/20221208_025917/js/generated/presshome.dependency.js"></script>
+        
+    
+    
+
+<script>
+    (function() {
+        var path = location.pathname;
+        var isLiveUrl = path.indexOf('/press/' + '052/live') >= 0;
+        var agentInfo = news.Util.getAgentInfo();
+        var isAndroidMobile = agentInfo.bIsAndroid && agentInfo.bMobileOrTablet;
+        var isLiveViewer = agentInfo.bIsLiveViewer;
+
+        if (isLiveUrl && isAndroidMobile && isLiveViewer) {
+            document.querySelector('html').classList.add('NAVER_APP_LIVE_VIEWER');
+        }
+    })();
+</script>
+
+<script>
+function goMainChannelUrl() {
+    if (isMobileDevice()) {
+        return news.Util.goMainChannel();
+    } else {
+        return window.location = "https://news.naver.com";
+    }
+}
+</script>
+
+		<meta property="og:title"			content="YTN 언론사홈"/>
+<meta property="og:type"			content="website"/>
+<meta property="og:url"				content="https://media.naver.com/press/052"/>
+<meta property="og:image"			content="https://mimgnews.pstatic.net/image/upload/office_logo/052/2021/10/01/logo_052_41_20211001183210.png"/>
+<meta property="og:description"		content="언론사 주요 뉴스와 속보를 만나볼 수 있습니다."/>
+<meta property="og:article:author"	content="네이버"/>
+<meta name="twitter:card"			content="summary">
+<meta name="twitter:title"			content="YTN 언론사홈">
+<meta name="twitter:site"			content="네이버 뉴스">
+<meta name="twitter:creator"		content="네이버 뉴스">
+<meta name="twitter:image"			content="https://mimgnews.pstatic.net/image/upload/office_logo/052/2021/10/01/logo_052_41_20211001183210.png">
+<meta name="twitter:description"	content="언론사 주요 뉴스와 속보를 만나볼 수 있습니다.">
+
+		<script>
+    
+    (function () {
+        var isUnderIE10 = navigator.appName === "Microsoft Internet Explorer";
+        if (!isUnderIE10) {
+            var script = document.createElement("script");
+            script.async = true;
+            script.src = "https://ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js";
+            document.head.appendChild(script);
+        }
+    })();
+
+    
+    window.gladsdk = window.gladsdk || { cmd: [] };
+    window.gladsdk.cmd.push(function () {
+        
+        window.gladsdk.setGlobalConfig({
+            enablePersistAd: true
+        });
+
+        
+        var adUnits = [];
+    
+        adUnits.push({
+            adUnitId: "m_news",
+            adSlotElementId: "nmap_press_home",
+            customParam: {
+                calp: "nhome",
+                oid: "052",
+                directSalesPct : 0
+            }
+        });
+    
+        for (let i = 0; i < adUnits.length; i++) {
+            window.gladsdk.defineAdSlot(adUnits[i]);
+        }
+
+        
+        var htmlClass = document.querySelector("html").getAttribute("class");
+        if (htmlClass && htmlClass.indexOf("DARK_THEME") > -1) {
+            window.gladsdk.setHostMeta("theme", "system");
+        }
+    });
+</script>
+
+	</head>
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+<body class="a body_press as_body_type_a as_mp_layout _font_size_setting_target" style="color: #0f3089;">
+	<script>
+    (function(){
+        try{
+            var settingTarget = document.querySelector('._font_size_setting_target');
+            var defaultFontSize = /(?:\s|^)?NFS=(\d)(?:;|$)/.test(document.cookie)? RegExp.$1: '2';
+            var newFontSizeClass = 'bfsize' + (parseInt(defaultFontSize)-1);
+            if(newFontSizeClass === 'bfsize0') {
+            	return;
+			}
+
+            settingTarget.className = settingTarget.className + " " + newFontSizeClass;
+        }catch(e){}
+    })();
+    </script>
+	<div class="u_skip"><a href="#ct">본문 바로가기</a></div>
+    
+
+
+
+
+
+
+
+
+
+
+
+<section class="news_header as_white_type">
+    <header class="nh_header" role="banner">
+        <div class="Ngnb">
+            <div class="Ngnb_inner">
+                <div class="Ngnb_both">
+                    <div class="Ngnb_left">
+                        <span class="Ngnb_logo"><a href="https://www.naver.com" class="Nlogo_link" onclick="nclk(event,'gnb.naver','','');"><span class="Nicon_logo">NAVER</span></a></span>
+                        <div class="Ngnb_service">
+                            <h1 class="Nservice_item">
+                                <a href="https://news.naver.com/main" onclick="nclk(event,'gnb.news','','');">
+                                    <span class="Nicon_service ">뉴스</span>
+                                </a>
+                            </h1>
+                            
+                            
+                            <span class="Nservice_subitem">
+								<a href="https://m.entertain.naver.com/home" data-mpurl='{"m":"https://m.entertain.naver.com/home","p":"https://entertain.naver.com/home"}' onclick="nclk(event,'gnb.enter','','');">
+									<span class="Nicon_family Nicon_entertain">연예</span>
+								</a>
+							</span>
+                            
+                            
+                            <span class="Nservice_subitem">
+								<a href="https://m.sports.naver.com/" data-mpurl='{"m":"https://m.sports.naver.com/","p":"https://sports.news.naver.com/index"}' onclick="nclk(event,'gnb.sports','','');">
+									<span class="Nicon_family Nicon_sports">스포츠</span>
+								</a>
+							</span>
+                            
+                            <span class="Nservice_subitem">
+								<a href="https://weather.naver.com/" onclick="nclk(event,'gnb.weather','','');">
+									<span class="Nicon_family Nicon_weather">날씨</span>
+								</a>
+							</span>
+                            <span class="Nservice_subitem">
+								<a href="https://contents.premium.naver.com/" onclick="nclk(event,'gnb.premium','','');">
+									<span class="Nicon_family Nicon_premium">프리미엄</span>
+								</a>
+							</span>
+                            <span class="Nservice_subitem">
+                                <a href="https://m.sports.naver.com/qatar2022/index" onclick="nclk(event,'gnb.qatar','','');">
+                                    <span class="Nicon_family Nicon_qatar2022">카타르 월드컵</span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    
+<div class="Ngnb_right">
+    <div class="Ngnb_group">
+        <div id="gnb" class="gnb_dark_type2"></div>
+    </div>
+    
+    <div class="Ngnb_search is_hidden _search_content"></div>
+    <div class="Ngnb_tool">
+        <a href="javascript:;"
+           class="Ntool_button _search_content_toggle_btn"
+           onclick="nclk(event,'gnb.sch','','');"><span class="Nicon_search">검색</span></a>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+</section>
+
+<hr>
+	
+    
+    
+        
+    
+
+
+
+
+
+
+
+	
+
+<div class="press_wrap as_live">
+<div class="press_container">
+<section class="press_content">
+<h2 class="u_skip">언론사 개별 홈</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="press_hd as_type_a  _press_header" style="display:none;; color: #0f3089;">
+	<div class="press_hd_bg" style="background-color: #0074dd; color: #0074dd;">
+		
+		
+		<div class="press_hd_bg_inner">
+			
+			<img src="https://mimgnews.pstatic.net/image/upload/office_logo/052/2018/10/10/logo_052_61_20181010111210.png" alt="" class="press_hd_bg_img" onerror="showNoImage(this, 'remove')">
+			
+			<i class="press_hd_bg_gradient_left"></i>
+			<i class="press_hd_bg_gradient_right"></i>
+		</div>
+	</div>
+	<a href="#" class="press_hd_prev _back_btn" onclick="nclk(event,'hom.back',052,'');">이전</a>
+	
+		<div class="press_hd_else _press_list_wrapper">
+			<a href="javascript:;" class="press_hd_else_button _press_list_btn" onclick="nclk(event,'hom.menu',052,'');">
+				<span class="u_hc">전체 언론사 홈</span>
+			</a>
+		</div>
+		
+	
+	<div class="press_hd_share">
+		
+		
+		<a href="#"  id="spiButton" class="naver-splugin spi_sns_share u_btn_sns_share" onclick="nclk(event,'hom.share',052,'');"
+		   data-style="standard"
+		   data-url="https://media.naver.com/press/052"
+		   data-title="YTN 언론사 페이지 :: 네이버"
+		   data-mail-url="https://media.naver.com/press/052?lfrom=mail"
+		   data-blog-url="https://media.naver.com/press/052?lfrom=blog"
+		   data-blog-source-type="3"
+		   data-blog-blog-id="naver"
+		   data-cafe-url="https://media.naver.com/press/052?lfrom=cafe"
+		   data-cafe-source-type="3"
+		   data-memo-url="https://media.naver.com/press/052?lfrom=memo"
+		   data-calendar-url="https://media.naver.com/press/052?lfrom=calendar"
+		   data-band-url="https://media.naver.com/press/052?lfrom=band"
+		   data-line-url="https://media.naver.com/press/052?lfrom=line"
+		   data-kakaotalk-url="https://media.naver.com/press/052?lfrom=kakao"
+		   data-kakaostory-display="off"
+		   data-kakaotalk-image-url="https://ssl.pstatic.net/static.news/image/news/m/2015/10/press_logo/052_1200x630.jpg"
+		   data-facebook-url="https://media.naver.com/press/052?lfrom=facebook"
+		   data-twitter-url="https://media.naver.com/press/052?lfrom=twitter"
+		   data-mypeople-url="https://media.naver.com/press/052?lfrom=mypeople"
+		   data-friend-display="on"
+		   data-friend-url="https://media.naver.com/press/052?lfrom=friend">
+			<span class="naver-splugin-c send_caption"><span class="u_hc">SNS 보내기</span></span>
+		</a>
+	</div>
+
+	<div class="press_hd_main">
+		<div class="press_hd_main_inner">
+			<div class="press_hd_ci" style="background-color: #0f3089;">
+				
+				
+				<a href="/press/052" class="press_hd_ci_image" onclick="nclk(event,'hom.logo',052,'');">
+					
+						
+						
+						
+							<img src="https://imgnews.pstatic.net/image/upload/spubs/lQG0000052/logo/2021/10/01/A_134907667.png?type=u144_144" alt="YTN" onerror="showNoImage(this)">
+						
+					
+				</a>
+				
+				<a href="http://www.ytn.co.kr/" class="press_hd_ci_home" onclick="nclk(event,'hom.url',052,'');">홈페이지</a>
+				
+			</div>
+			<div class="press_hd_info">
+				<div class="press_hd_main_info">
+					<div class="press_hd_top">
+						
+						<h3 class="press_hd_name">
+							<a href="http://www.ytn.co.kr/" class="press_hd_name_link" onclick="nclk(event,'hom.url',052,'');">
+								YTN<i class="press_hd_name_link_home"></i>
+							</a>
+						</h3>
+						<div class="press_hd_btns_area">
+							
+								<div class="press_hd_subscribe_btnwrap _press_hd_subscribe_btnwrap"></div>
+							
+						</div>
+					</div>
+					
+					<p class="press_hd_desc">진실을 전합니다! 진심을 다합니다! 뉴스는 YTN</p>
+				</div>
+				
+					
+						
+						
+					
+					
+					<div class="press_hd_subscribe">
+						<em class="press_hd_subscribe_term _follower_label" style="">구독</em>
+						
+							<em class="press_hd_subscribe_num _channel_follower_count" style="">0</em>
+						
+						<span class="press_subscribe_badge _follower_count_million_badge" style=""></span>
+					</div>
+					
+				
+			</div>
+
+			
+				
+				<div class="press_profile">
+					<div class="pp_inner">
+						<h4 class="blind">언론사 정보</h4>
+						<div class="pp_rel">
+							<h5 class="blind">연관 채널</h5>
+							<a href="javascript:;" class="pp_rel_desc _toggle_profile_btn" data-officeid="052" data-clickcode-toggle-open="hom.popen" data-clickcode-toggle-close="hom.pclose">
+								<div class="prd_left">
+									<div class="prd_text">
+										
+											
+											
+												
+												<strong>2개</strong> 채널, <strong class="as_em">+388만명</strong>이 함께해요!
+											
+											
+										
+									</div>
+								</div>
+								<div class="prd_right">
+									
+										<div class="prd_icons">
+											
+												<i class="prd_icon"><img src="https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_youtube.png" alt="youtube" onerror="showNoImage(this)"></i>
+											
+												<i class="prd_icon"><img src="https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_tv.png" alt="네이버 TV" onerror="showNoImage(this)"></i>
+											
+										</div>
+									
+									<div class="prd_buttons">
+										<i type="button" class="prd_button">더보기</i>
+									</div>
+								</div>
+							</a>
+							<div class="pp_rel_bundle _press_more_profile is_hidden">
+								
+									<ul class="pp_rel_list">
+										
+											
+											<li class="pp_rel_item _representative_channel_item">
+												<div class="pp_rel_inner" data-use-follow-layer="0">
+													<div class="pp_rel_title _channel_plugin_follow_count" data-channel-id="604726d302ffee494ea66f58" data-count-label="구독" data-count-template="pressHomeProfile">
+														<i class="pp_rel_icon"><img src="https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_tv.png" alt="네이버 TV" onerror="showNoImage(this)"></i>
+														<a href="https://tv.naver.com/ytnnews24" class="pp_rel_text" onclick="nclk(event,'hom.ptv', '', '');">
+															<span class="pp_rel_name">뉴스는 YTN</span>
+														</a>
+														
+														
+									<span class="pp_rel_count _count">
+										
+											
+											구독
+										
+										16.3만+
+									</span>
+														
+													</div>
+													
+														<button class="pp_rel_subscribe _channel_plugin_follow_btn" data-channel-id="604726d302ffee494ea66f58" data-toggle-class="is_on" data-clickcode-follow="hom.subs" data-clickcode-unfollow="hom.subs"><span class="blind">구독</span></button>
+													
+												</div>
+												
+											</li>
+										
+											
+											<li class="pp_rel_item _representative_channel_item">
+												<div class="pp_rel_inner" data-use-follow-layer="0">
+													<div class="pp_rel_title _channel_plugin_follow_count" data-channel-id="604727001f685937c879730e" data-count-label="구독" data-count-template="pressHomeProfile">
+														<i class="pp_rel_icon"><img src="https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_youtube.png" alt="youtube" onerror="showNoImage(this)"></i>
+														<a href="https://www.youtube.com/channel/UChlgI3UHCOnwUGzWzbJ3H5w" class="pp_rel_text" onclick="nclk(event,'hom.pyoutube', '', '');">
+															<span class="pp_rel_name"> YTN</span>
+														</a>
+														
+														
+									<span class="pp_rel_count _count">
+										
+											
+											구독
+										
+										372만+
+									</span>
+														
+													</div>
+													
+												</div>
+												
+											</li>
+										
+									</ul>
+								
+								
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			
+		</div>
+	</div>
+</header>
+
+<script>
+	function initShare() {
+		new news.JsLoader().setConfig({
+			'sCharSet': 'utf-8' // default
+		}).load(
+				['https://ssl.pstatic.net/spi/js/release/ko_KR/splugin.m.js?'],
+				function() {
+					window.__splugin = SocialPlugIn_Core({
+						// nEvent Key
+						"evKey"  : "news",
+						"dimmed" : "fixed",
+						"darkMode"    : isDarkShareLayer(),
+						"serviceName" : "뉴스",
+						"sourceName" : "",
+						"onClick"     : function(button) {},
+						"onShow"      : function() {},
+						"onHide"      : function() {},
+						"onResize"    : function(event) {},
+						"onRotate"    : function(event) {}
+					});
+				}
+		);
+	}
+
+	function initPressList() {
+		var cpType = 'News';
+		var popupUrl = '/press/popup?cpType=' + cpType;
+		var pressListPopup = new PressHomeMainManager.PressListPopup('._press_list_btn', {
+			selectedOfficeId: '052',
+			pressListPopupUrl: popupUrl,
+			wrapper: "._press_list_wrapper"
+		});
+
+		return pressListPopup;
+	}
+
+	function initPressHomeLnb(params) {
+        var officeId = '052';
+        var isChannelFollowerVisible = true;
+		var welMillionBadgeArea = $('._follower_count_million_badge');
+		var welFollowerLabel = $('._follower_label');
+		var isMillionBadgeVisible = welMillionBadgeArea.length > 0;
+		var isLiveViewer = $('.NAVER_APP_LIVE_VIEWER').length > 0;
+		var path = location.pathname;
+		var isLiveUrl = path.indexOf('/press/' + officeId + '/live') >= 0;
+
+        /* 채널구독수 */
+        if (isChannelFollowerVisible || isMillionBadgeVisible) {
+			var channelFollowerCount = new PressHomeMainManager.ChannelFollowerCount('._channel_follower_count', {
+				officeId: officeId,
+			});
+			if (isChannelFollowerVisible) {
+				channelFollowerCount.oPromise.then($.proxy(channelFollowerCount.renderFollowerCount, channelFollowerCount));
+
+				var incrementFollowerCount = function () {
+					channelFollowerCount.incrementAndRenderFollowerCount();
+				};
+
+				var decrementFollowerCount = function () {
+					channelFollowerCount.decrementAndRenderFollowerCount();
+				}
+			}
+
+			if (isMillionBadgeVisible) {
+				channelFollowerCount.oPromise.then(function (followerCount) {
+					var nFollowerCount = followerCount || 0;
+					var nFollowerCountInMillion = Math.floor(nFollowerCount / 1000000);
+					var nFollowerCountInMan = nFollowerCountInMillion * 100;
+					if (nFollowerCountInMillion < 1) {
+						if (!isChannelFollowerVisible) {
+							$(".press_hd_subscribe").remove();
+						}
+						return;
+					} else {
+						var sMillionClassName = 'as_' + ((nFollowerCountInMillion % 10 === 0) ? 10 : nFollowerCountInMillion % 10) + 'million';
+
+						welFollowerLabel.show();
+						welMillionBadgeArea.addClass(sMillionClassName)
+						welMillionBadgeArea.append(' <i class="press_ico">구독자수</i><em>' + nFollowerCountInMan + '</em>만').show();
+					}
+				});
+			}
+        }
+        /* 채널구독수 */
+
+        /* 채널구독버튼 */
+        var channelSubscribeButton = new PressHomeMainManager.ChannelSubscribeButton('._press_hd_subscribe_btnwrap', {
+            officeId: officeId,
+            buttonClassName: 'press_hd_subscribe_btn',
+            noLoginLayerTemplate: function() {
+            	return news.Util.getTemplateRenderer(function () {/*!@preserve
+            				<div class="press_hd_subscribe_layer_wrap as_tooltip _afterAdd" style="display: none;">
+								<div class="press_hd_subscribe_layer">
+									<p class="press_hd_subscribe_layer_title">메인 뉴스판에서 YTN 주요뉴스를 볼 수 있습니다.</p>
+									<div class="press_hd_subscribe_layer_btns">
+										<a href="#" onclick="goMainChannelUrl();" class="press_hd_subscribe_layer_btn">보러가기</a>
+									</div>
+								</div>
+							</div>
+					*/
+					return true;
+				});
+			},
+			commonLayerTemplate: function() {
+            	return news.Util.getTemplateRenderer(function() {/*!@preserve
+            				<div class="press_hd_subscribe_layer_wrap as_tooltip _afterRemove" style="display: none;">
+								<div class="press_hd_subscribe_layer">
+									<p class="press_hd_subscribe_layer_title"><strong>YTN</strong> 언론사 구독 해지되었습니다.</p>
+								</div>
+							</div>
+            		*/
+					return true;
+            	});
+			},
+            nclk_add: 'hom.take',
+            nclk_remove: 'hom.cancel',
+            nclk_info: 'hom.info',
+            onAddChannelSuccess: incrementFollowerCount,
+            onRemoveChannelSuccess: decrementFollowerCount,
+			needNotificationButton: true,
+			needNotificationConfirm: true
+        });
+        /* 채널구독버튼 */
+
+        /* 공유하기 */
+		if (!isLiveViewer && !isLiveUrl) {
+			initShare();
+		}
+        /* 공유하기 */
+
+        /* 뒤로버튼 */
+        var historyBackButton = new PressHomeMainManager.HistoryBackButton('._press_header ._back_btn');
+        /* 뒤로버튼 */
+
+        /* 언론사리스트 */
+		if (!isLiveViewer && !isLiveUrl) {
+			var pressListPopup = initPressList();
+		}
+        /* 언론사리스트 */
+
+		return {
+            channelFollowerCount: channelFollowerCount,
+            historyBackButton: historyBackButton,
+            channelSubscribeButton: channelSubscribeButton,
+            pressListPopup: pressListPopup
+        }
+	}
+</script>
+
+<script>
+	var profileData = {"notice":null,"relatedChannelContainer":{"totalSubscriberCount":3883699,"channelGroupList":[{"type":"NAVER_TV","channels":[{"type":"NAVER_TV","name":"뉴스는 YTN","subscriberCount":"16.3만","url":"https://tv.naver.com/ytnnews24","channelPluginId":"604726d302ffee494ea66f58","clickCode":"ptv","channelPluginFollowAvailable":true,"countLabel":"구독","logoImgUrl":"https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_tv.png","alternativeName":"네이버 TV","displayName":"뉴스는 YTN"}],"subscriberCount":"16.3만","channelsCount":1,"representativeChannel":{"type":"NAVER_TV","name":"뉴스는 YTN","subscriberCount":"16.3만","url":"https://tv.naver.com/ytnnews24","channelPluginId":"604726d302ffee494ea66f58","clickCode":"ptv","channelPluginFollowAvailable":true,"countLabel":"구독","logoImgUrl":"https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_tv.png","alternativeName":"네이버 TV","displayName":"뉴스는 YTN"}},{"type":"YOUTUBE","channels":[{"type":"YOUTUBE","name":" YTN","subscriberCount":"372만","url":"https://www.youtube.com/channel/UChlgI3UHCOnwUGzWzbJ3H5w","channelPluginId":"604727001f685937c879730e","clickCode":"pyoutube","channelPluginFollowAvailable":false,"countLabel":"구독","logoImgUrl":"https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_youtube.png","alternativeName":"youtube","displayName":" YTN"}],"subscriberCount":"372만","channelsCount":1,"representativeChannel":{"type":"YOUTUBE","name":" YTN","subscriberCount":"372만","url":"https://www.youtube.com/channel/UChlgI3UHCOnwUGzWzbJ3H5w","channelPluginId":"604727001f685937c879730e","clickCode":"pyoutube","channelPluginFollowAvailable":false,"countLabel":"구독","logoImgUrl":"https://ssl.pstatic.net/static.news/image/news/m/2020/07/24/channel_youtube.png","alternativeName":"youtube","displayName":" YTN"}}]},"talkTalkUrl":null,"statistics":null,"awards":[],"relatedChannelEmpty":false};
+	var billboardChartLibUrl = ['https://ssl.pstatic.net/static.news/mnews/resources/20221208_025917/js/generated/billboard.pkgd.min.js'];
+
+    function initPressHomeTopLnb(params) {
+        var pressHomeLnb = initPressHomeLnb();
+
+        var officeId = '052';
+        var welOffceHomeTabList = $('._office_home_tab_list');
+        var pressHeader = $('._press_header');
+        var isTabPresent = welOffceHomeTabList.length > 0;
+
+        /* 플로팅 */
+        var _floatingConfig = {
+            sFixedContentSelector: '._fixed',
+            onInitialize: function() {
+                new PressHomeMainManager.ChannelSubscribeButton('._press_float_subscribe', {
+                    officeId: officeId,
+                    buttonClassName: 'press_float_subscribe_btn',
+					noLoginLayerTemplate: function() {
+            			return news.Util.getTemplateRenderer(function () {/*!@preserve
+								<a href="javascript:;" onclick="goMainChannelUrl();" class="press_float_subscribe_layer _afterAdd" style="display: none;">
+									<span class="press_float_subscribe_layer_text">메인 뉴스판에서 YTN 주요뉴스를 볼 수 있습니다.</span>
+									<span class="press_float_subscribe_layer_link">보러가기</span>
+								</a>
+								*/
+							return true;
+						});
+					},
+					commonLayerTemplate: function() {
+		            	return news.Util.getTemplateRenderer(function() {/*!@preserve
+								<a href="javascript:;" onclick="return false;" class="press_float_subscribe_layer _afterRemove" style="display: none;">
+									<span class="press_float_subscribe_layer_text"><strong>YTN</strong> 언론사 구독 해지되었습니다.</span>
+								</a>
+		            			*/
+							return true;
+						});
+					},
+                    nclk_add: 'prs_hom.take',
+                    nclk_remove: 'prs_hom.cancel',
+                    nclk_info: 'prs_hom.info',
+                    onAddChannelSuccess: pressHomeLnb.channelSubscribeButton.onAddChannelSuccess,
+                    onRemoveChannelSuccess: pressHomeLnb.channelSubscribeButton.onRemoveChannelSuccess
+                });
+            },
+			onStartFloating: function() {
+				pressHeader.addClass('is_invisible');
+			},
+			onStopFloating: function() {
+				pressHeader.removeClass('is_invisible');
+			}
+        };
+        if (isTabPresent) {
+            _floatingConfig.fnBoundary = function(){
+            	return $("._start_floating").offset().top - $("._press_float").height();
+            }
+        } else {
+            _floatingConfig.sAfterContentSelector = '._press_header';
+        }
+        var floating = new PressHomeMainManager.Floating('._press_float', _floatingConfig);
+        /* 플로팅 */
+
+        /* 뒤로버튼 */
+        var historyBackButton = new PressHomeMainManager.HistoryBackButton('._press_float ._back_btn');
+        /* 뒤로버튼 */
+
+        return {
+            floating: floating,
+            pressHomeLnb: pressHomeLnb,
+            historyBackButton: historyBackButton
+        }
+    }
+</script>
+
+
+
+
+
+
+<div class="press_float _press_float is_fixed" style="background-color: #0f3089; display:none;">
+	<div class="press_float_inner">
+		<a href="javascript:;" class="press_float_prev _back_btn">이전</a>
+		<a href="https://m.naver.com" class="press_float_logo"><span class="blind">NAVER</span></a>
+		<a href="https://news.naver.com/main" class="press_float_service ">
+			<span class="blind">뉴스</span>
+		</a>
+		<div class="press_float_head">
+			<strong class="press_float_title">
+				<a href="/press/052" class="press_float_title_text" onclick="nclk(event,'prs_hom.top',052,'');">YTN</a>
+			</strong>
+		</div>
+
+		<div class="press_float_subscribe _press_float_subscribe">
+		</div>
+
+	</div>
+</div>
+<div id="ct" role="main" class="press _start_floating" style="min-height:3000px;">
+	
+		
+			
+
+
+
+
+
+
+
+
+
+<div class="press_section_tab _press_tab_scroll _fixed is_fixed" style="display:none; background-color: #0f3089;">
+	<div class="press_section_tab_inner">
+		<ul class="press_section_tab_list _office_home_tab_list">
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052" class="_press_tab_btn" data-tab-type="Default" data-tab-id="Main">
+						<span class="press_section_tab_txt">주요뉴스</span>
+					</a>
+				</li>
+			
+				
+				
+					
+						
+						
+							
+						
+						
+					
+				
+				<li class="press_section_tab_item is_new" aria-selected="true">
+					<a href="/press/052/live" class="_press_tab_btn" data-tab-type="Link" data-tab-id="NaverTvLive">
+						<span class="press_section_tab_txt">생중계</span>
+					</a>
+				</li>
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052?sid=100" class="_press_tab_btn" data-tab-type="Section" data-tab-id="Politics">
+						<span class="press_section_tab_txt">정치</span>
+					</a>
+				</li>
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052?sid=101" class="_press_tab_btn" data-tab-type="Section" data-tab-id="Economy">
+						<span class="press_section_tab_txt">경제</span>
+					</a>
+				</li>
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052?sid=102" class="_press_tab_btn" data-tab-type="Section" data-tab-id="Society">
+						<span class="press_section_tab_txt">사회</span>
+					</a>
+				</li>
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052?sid=103" class="_press_tab_btn" data-tab-type="Section" data-tab-id="LifeCulture">
+						<span class="press_section_tab_txt">생활</span>
+					</a>
+				</li>
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052?sid=104" class="_press_tab_btn" data-tab-type="Section" data-tab-id="World">
+						<span class="press_section_tab_txt">세계</span>
+					</a>
+				</li>
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052?sid=105" class="_press_tab_btn" data-tab-type="Section" data-tab-id="It">
+						<span class="press_section_tab_txt">IT</span>
+					</a>
+				</li>
+			
+				
+				
+					
+						
+						
+						
+					
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/tv/052" class="_press_tab_btn" data-tab-type="Link" data-tab-id="Broadcast">
+						<span class="press_section_tab_txt">저녁방송</span>
+					</a>
+				</li>
+			
+				
+				
+				<li class="press_section_tab_item " aria-selected="false">
+					<a href="/press/052/ranking" class="_press_tab_btn" data-tab-type="Default" data-tab-id="Ranking">
+						<span class="press_section_tab_txt">랭킹</span>
+					</a>
+				</li>
+			
+		</ul>
+	</div>
+</div>
+
+<script>
+    // NEW-23795
+    function addTabClassIfNecessary() {
+        var welTabScroll = $('._press_tab_scroll');
+        if (welTabScroll.length > 0) {
+            var welTabs = $('._office_home_tab_list').children();
+            var welSelectedTab = $('.press_section_tab_item[aria-selected=true]')
+
+            var nIndex = welTabs.index(welSelectedTab);
+            welTabScroll.removeClass('is_first').removeClass('is_last');
+            if (nIndex == 0) {
+                welTabScroll.addClass('is_first');
+            } else if (nIndex == welTabs.length - 1) {
+                welTabScroll.addClass('is_last');
+            }
+        }
+    }
+
+    function initPressHomeTab(params) {
+        var officeId = '052';
+
+        /* 탭 */
+        var welTabScroll = $('._press_tab_scroll');
+        if (welTabScroll.length > 0) {
+            // position 0 부터 시작한다. ("style 속성 자체를 지우면 스크롤이 적용되지 않는다" on iOS)
+            welTabScroll.children().eq(0).css('left', '0px');
+            var pressTabScroll = new news.Scroll("._press_tab_scroll");
+            // ._press_tab_scroll이 floating 상태에 따라 height값이 달라져 고정하지 않도록 설정
+            $("._press_tab_scroll").css("height", ""); 
+            var welSelectedTab = $('.press_section_tab_item[aria-selected=true]');
+            if (welSelectedTab.length > 0) {
+                pressTabScroll.scrollElToCenter(welSelectedTab);
+            }
+        }
+        /* 탭 */
+        addTabClassIfNecessary();
+
+        /* 섹션탭 클릭 */
+        var pressTabButton = new PressHomeMainManager.ButtonListener('._press_tab_btn', {
+            onClick: function (e) {
+                var tabType = $(e.currentTarget).data('tab-type');
+				var tabId = $(e.currentTarget).data('tab-id');
+                if (!(tabType === 'home' || tabType === 'link')) {
+					if (params && params.floating && params.floating.isFloating) {
+						e.currentTarget.hash = 'lnb';
+					}
+				}
+                if (tabId === 'Main') {
+                    nclk(e, 'hom.mm', officeId, '');
+                } else if (tabId === 'NaverTvLive') {
+                    nclk(e, 'hom.live', officeId, '');
+                } else if (tabId === 'Ranking') {
+                	nclk(e, 'hom.rank',officeId,'');
+				} else if (tabId === 'Premium') {
+                    nclk(e, 'hom.premium', officeId, '');
+				} else {
+					nclk(e, 'hom.section', officeId, '');
+				}
+            }
+        });
+        /* 섹션탭 클릭 */
+
+        return {
+            pressTabScroll: pressTabScroll,
+            pressTabButton: pressTabButton
+		}
+    }
+</script>
+
+<script>
+    /**
+     * `focus to lnb` 대응 (url format: `some/url#lnb`)
+     */
+    ;(function(){
+        var isFocusToLnbMode = false;
+
+        // default 마크업 구성을 `focus to lnb` 로 하고 (floating lnb 로 구성),
+        // `focus to lnb` 접근이 아닐 경우 `floating lnb` 구성을 해제하는 컨셉. (to static 으로)
+        //
+        // default 마크업 구성을 `floating lnb` 로 한 이유:
+        // 1. `static lnb` 방식으로 하면,
+        // 2. `focus` 처리할 때 "화면 덜컹 거림이 보여서" 보기 좋지 않다.
+        //
+        // `focus` 요청일 경우,
+        // 필요한 추가 처리는 content 출력 후 처리돼있다. (e.g. scroll 이동)
+        if(location.hash === '#lnb'){
+            isFocusToLnbMode = true;
+        }
+
+        // "뒤로가기", "새로고침" 일 경우 focus 처리하지 않는다. (browser 에서 scroll 자동 이동 시키므로)
+        (function () {
+            var winNavigation = (window.performance && window.performance.navigation) || {};
+            var isReload = winNavigation.type === winNavigation.TYPE_RELOAD;
+            var isHistoryBack = winNavigation.type === winNavigation.TYPE_BACK_FORWARD;
+            // 상수를 지원하지 않을 경우도 focus 처리하지 않음
+            if(isHistoryBack || isReload || !winNavigation.TYPE_BACK_FORWARD){
+                isFocusToLnbMode = false;
+            }
+        })();
+
+        try{
+            // 서버 기본 설정이 `lnb floating + block' 이면 LNB 움직이는게 보여서 script 에서 block 되도록 했다.
+            document.querySelector('._press_float').style.display = '';
+            document.querySelector('._press_tab_scroll').style.display = '';
+        }catch(e){}
+
+        // 선택된 LNB 중앙 정렬 선처리 (onload 후 Scroll-UI 에서 중앙 정렬시 이동이 보이지 않게)
+        (function(){
+            try{
+                var lnb = document.querySelector('._press_tab_scroll');
+                var lnbScrollContent = lnb.firstElementChild;
+                var selectedItem = lnb.querySelector('li[aria-selected="true"]');
+                var maxScrollLeft = 0;
+                var selectedItemScrollLeft = 0;
+
+                // Scroll-UI 적용 전에 inline style 은 제거해 줘야 한다. (e.g. onload 후 적용 될 때)
+                lnbScrollContent.style.position = 'absolute';
+                maxScrollLeft = lnbScrollContent.clientWidth - lnb.clientWidth;
+                if(maxScrollLeft <= 0){ // lnb 가 content 보다 크다. (scroll 필요 없는 경우)
+                    return;
+                }
+                selectedItemScrollLeft = Math.max(
+                    0,
+                    (selectedItem.offsetLeft || 0) -
+                    ((lnb.clientWidth - selectedItem.clientWidth) / 2)
+                );
+                selectedItemScrollLeft = Math.min(maxScrollLeft, selectedItemScrollLeft);
+                lnbScrollContent.style.left = -1 * Math.round(selectedItemScrollLeft) + 'px';
+            }catch(e){}
+        })();
+
+        // 1. focus mode 라면 서버 출력 마크업을 그대로 두고
+        // 2. 이후 처리는 content 출력 후 js 에서 하는 구조다.
+        if(isFocusToLnbMode){
+            return;
+        }
+
+        /**
+         * `focus to lnb` 접근이 아니라면 `static lnb` 구성으로 마크업 변경
+         */
+        try{
+            var header = document.querySelector('._press_header');
+            var headerFloat = document.querySelector('._press_float');
+            var lnb = document.querySelector('._press_tab_scroll');
+
+            header.style.display = '';
+            headerFloat.className = headerFloat.className.replace('is_fixed', '');
+            if(lnb){
+                lnb.className = lnb.className.replace('is_fixed', '');
+            }
+        }catch(e){}
+    })();
+</script>
+
+		
+		
+	
+	<script>
+		/**
+		 * `focus to lnb` 대응 (content 출력 후 추가 처리)
+		 */
+		;(function () {
+			try {
+				var startFloating = document.querySelector('._start_floating');
+				var header = document.querySelector('._press_header');
+				var lnbScrollPaddingTop = document.querySelector('._press_float').clientHeight;
+
+				// js 처리 관련 inline style 제거
+				window.addEventListener('load', function () {
+					document.querySelector('#ct').style.minHeight = '';
+				});
+
+				// display none 상태가 아니면 `focus to lnb` 접근이 아니다.
+				if (header.style.display !== 'none') {
+					return;
+				}
+				header.style.display = ''; // show header
+				
+				var floatingOffset = startFloating.getBoundingClientRect().top + window.pageYOffset;
+				window.scrollTo(0, floatingOffset - lnbScrollPaddingTop);
+			}catch(e){}
+		})();
+	</script>
+
+
+    
+<link type="text/css" rel="stylesheet" href="https://common.like.naver.com/static20190418123331/css/ssl/list/mobile/likeit_tvcast.css" charset="utf-8">
+<script src="https://ssl.pstatic.net/tveta/libs/ssp-video/prod/ssp.web.sdk_2.2.1.js"></script>
+
+
+<div class="press_loading">
+    <div class="r_more_loader" style=";">
+        <i class="r_more_dot as_1"></i>
+        <i class="r_more_dot as_2"></i>
+        <i class="r_more_dot as_3"></i>
+        <i class="r_more_dot as_4"></i>
+        <i class="r_more_dot as_5"></i>
+        <i class="r_more_dot as_6"></i>
+    </div>
+    <p class="prlo_p">라이브 플레이어가 로딩중입니다</p>
+</div>
+<div class="press_live _press_live_viewer_wrapper" style="display: none">
+    <div class="press_live_left">
+        <div class="prli_player _press_live_wrapper" data-live-id="3674029" data-live-no="121778" data-naver-tv-api-domain="api.tv.naver.com">
+            <div class="prli_playerinner">
+                <div class="prli_playerthumb" id="_player_area">
+                    <pzp-mobile-layout id="liveMobileLayout" style="width: 100%;height: 100%;display: none;" connection="cellular">
+                        <pzp-mobile-header class="pzp-mobile__header">
+                            <pzp-live-badge class="pzp-mobile__live-badge"></pzp-live-badge>
+                        </pzp-mobile-header>
+                    </pzp-mobile-layout>
+                    <pzp-pc-layout id="livePcLayout" style="width: 100%;height: 100%;display: none;">
+                        <pzp-pc-header class="pzp-pc__header" >
+                            <pzp-pc-content-info class="pzp-pc__content-info">
+                                <pzp-live-badge class="pzp-pc__live-badge"></pzp-live-badge>
+                            </pzp-pc-content-info>
+                        </pzp-pc-header>
+                    </pzp-pc-layout>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="prli_info">
+            <div class="prli_infoinner">
+                <div>
+                    <div class="rmc_info">
+                        <strong class="info_channel _channel_title">뉴스는 YTN</strong>
+                        <h2 class="info_title"><b class="txt">대한민국 24시간 뉴스 채널  </b></h2>
+                        <div class="info_meta">
+                            
+                                
+                                    <i class="progress as_live" aria-label="live"></i>
+                                
+                                
+                            
+                            <time>
+                                12.06. 화 오후 5:54
+                            </time>
+                            <em class="count as_played _view_count" data-live-id="3674029" data-naver-tv-api-domain="api.tv.naver.com" style="display: none;"></em>
+                        </div>
+                        <div class="info_multilike">
+                            <div class="_reactionModule u_likeit" data-sid="TVCAST_OPEN_LIVE" data-did="TVCAST" data-cid="121778" data-ccounttype="nolimit">
+                                <ul class="u_likeit_inline _faceLayer" role="menu">
+                                    <li class="u_likeit_list good">
+                                        <span class="u_likeit_list_name _label" style="display:none;" title="라이브를 응원하세요!">좋아요</span>
+                                        <span class="info_like">
+                                        <span class="blind">좋아요</span>
+                                        <span class="u_likeit_list_count _count _countOutside">0</span>
+                                    </span>
+                                        <a class="u_likeit_list_btn _nolimitButton" data-type="like" data-log="test.like|test.unlike" href="javascript:;" role="button">
+                                            <i class="btn _icon" aria-label="좋아요"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    <div class="press_live_right">
+        <div class="prli_talk end_live_talk">
+            <div id="comment_module" class="prli_talkinner">
+                <div style="height:3000px;">&nbsp;</div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+
+
+<div class="press_desc_wrap">
+	
+		
+			<div class="press_desc"><em>YTN</em>의 최신 뉴스입니다.</div>
+		
+		
+		
+	
+</div>
+<p class="subscribe_ticker" style="display: none;">구독한 뉴스는 <em>My뉴스</em>에서 볼 수 있습니다.</p>
+<script type='text/javascript'>
+    function initComment() {
+        var oConfig = {};
+        
+        
+        new PressHomeMainManager.LiveTalk('comment_module', 'CH_121778', 'tvcastlive', oConfig);
+    }
+
+    function initLike() {
+        reaction.init({
+            "type": "multi",
+            "domain": "https://nolimit.like.naver.com",
+            "isMobile": true,
+            "dependentLibrary": "jquery",
+            "contentCountPerOnceRequest": 10,
+            "maxCount": 99999999,
+            "isHiddenLabel": false,
+            "isHiddenCount": false,
+            "isHiddenZeroCount": false,
+            "isUsedLabelAsZeroCount": true,
+            "isDebugMode": false,
+            "history": "",
+            "cssId":"news",
+            "isUseNolimitCountPolling": true,
+            "nolimitCountPollingTime": 10,
+            "callback": {
+                clicked: function(param) {
+                    jQuery(param.targets[0]).find("._icon").removeClass("is_animated");
+                    var count = param.content.count;
+                    var countOutside = jQuery("._countOutside");
+                    // Number.toLocaleString : 천단위 comma
+                    countOutside && countOutside.text(Number(count).toLocaleString())
+                },
+                click: function(param) {
+                    jQuery(param.target).find("._icon").addClass("is_animated");
+                },
+                updated: function (param) {
+                    if (param.contents[0].reactions.length) {
+                        var count = param.contents[0].reactions[0].count;
+                        var countOutside = jQuery("._countOutside");
+                        // Number.toLocaleString : 천단위 comma
+                        countOutside && countOutside.text(Number(count).toLocaleString());
+                    }
+                }
+            }
+        });
+    }
+
+</script>
+
+
+    </section>
+
+<section class="press_aside _aside_wrapper">
+    <div class="press_aside_inner _aside_content">
+        <h3 class="blind">구독</h3>
+        <div class="_aside"></div> 
+<script>
+doAfterLoadEnd(loadAside);
+
+
+function loadAside() {
+    var forcePcVersion = "";
+
+    if (isMobileDevice() && !forcePcVersion) {
+        return;
+    }
+    var iframe = append(); 
+    var asideFixed;
+
+    window.addEventListener('message', function(event) {
+        var data = event.data;
+
+        if (event.origin !== "https://news.naver.com") {  
+            return;
+        }
+
+        if (data.type === "setIframeSize" && data.height) {
+            iframe.style.height = data.height + 'px';
+            iframe.style.visibility = ""; 
+
+            try {
+                asideFixed.deactivate(); // event 중복 적용되지 않게
+            } catch(e) {}
+
+            asideFixed = AsideFixed({
+                "wrapper" : document.querySelector("._aside_wrapper")
+                
+            });
+        }
+    });
+    
+    
+    function append() {
+        var iframe = document.createElement('iframe');
+
+        iframe.width = "100%";
+        iframe.height = "0"; 
+        iframe.style.visibility = "hidden"; 
+        iframe.setAttribute("frameborder", "no");
+        iframe.setAttribute("scrolling", "no");
+        iframe.src = "https://news.naver.com/aside?oid=052";
+
+        document.querySelector("._aside").appendChild(iframe);
+
+        return iframe;
+    }
+}
+</script>
+    </div>
+</section>
+</div>
+</div>
+
+
+
+    
+
+
+
+
+<hr /> 
+
+
+
+
+
+
+
+
+
+<div class="mp_footer">
+
+    <div class="f_maininfo">
+        <div class="f_maininfoinner">
+            <a href="javascript:;" class="r_pg_top _go_top" id="goTop" onclick="nclk(event, 'fot.pctop', '', '');">맨위로</a>
+
+            <footer role="contentinfo">
+                <p id="u_ftlkw" class="u_ftlkw _footer_login">
+                    <a href="https://m.naver.com/services.html"  data-mpurl='{"m":"https://m.naver.com/services.html","p":"https://www.naver.com/more.html"}' class="u_ftlk" onclick="nclk(event,'fot.serviceall','','');">전체서비스</a>
+                </p>
+                <p class="u_cr">
+                    <span class="u_ftm">
+            
+                
+                    <span class="u_cri u_cri_v1"><a href="https://m.news.naver.com/ombudsman/index" data-mpurl='{"m":"https://m.news.naver.com/ombudsman/index","p":"https://news.naver.com/main/ombudsman/index.naver"}' class="u_cra" onclick="nclk(event,'fot.guide','','');">서비스안내</a></span>
+                    <span class="u_cri u_cri_v1"><a href="https://help.naver.com/alias/news/news_007.naver" data-mpurl='{"m":"https://help.naver.com/alias/news/news_007.naver","p":"https://help.naver.com/alias/news/news_007.naver"}' class="u_cra" onclick="nclk(event,'fot.help','','');">뉴스도움말</a></span>
+                    <span class="u_cri u_cri_v1"><a href="https://help.naver.com/alias/news/news_001.naver" data-mpurl='{"m":"https://help.naver.com/alias/news/news_001.naver","p":"https://help.naver.com/alias/news/news_001.naver"}' class="u_cra" onclick="nclk(event,'fot.report','','');">오류신고</a></span>
+                
+                
+            
+					</span>
+            
+                
+                    <span class="u_copyright">본 콘텐츠의 저작권은 제공처 또는 네이버에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.</span>
+                    <span class="u_cri"><span class="copymark">ⓒ</span><a href="https://www.navercorp.com/" class="u_cra_v1" id="nhnLink" onclick="nclk(event,'fot.navercorp','','');">NAVER Corp.</a></span>
+                    
+                        
+                            
+                        
+                        
+                        
+                    
+                    
+                        <span class="u_cri"><span class="copymark">ⓒ</span> <a class="u_cra_v1" id="copyRightByOffice">YTN</a></span>
+                    
+                
+                
+            
+                </p>
+            </footer>
+        </div>
+    </div>
+</div>
+
+
+    
+	
+	
+		
+		
+	
+	
+	
+    
+    <script type="text/javascript">
+/**
+ * 이 파일은 모바일 뉴스 서비스 전체 페이지에 적용되는 스크립트로써,
+ * 코드 추가 시 Front-End 성능 관점에서 주의를 요합니다.
+ */
+jQuery(window).on('load', function(){
+    setTimeout(onload, 10);
+
+    function onload(){
+        var oLnb = new news.Lnb('._lnb_scroll');
+        new news.ImageLazyLoader().load("img[data-src]");
+        new news.MoveTopButton("._go_top");
+
+        
+        new news.HistoryManager().init("naver_mobile_news_history", "");
+
+        // iframe lazy-loading
+        (function(){
+            try {
+                Array.prototype.slice.apply(document.querySelectorAll('iframe[data-src]'))
+                    .forEach(function(iframeEl) {
+                        var originSrc = iframeEl.getAttribute('data-src');
+                        if(originSrc) {
+                            iframeEl.setAttribute('src', originSrc);
+                        }
+                    });
+            }catch(e) {}
+        })();
+
+        if(typeof init === "function"){
+            init();
+        }
+
+        var cookie = news.Cookie.getInstance();
+        var isShownNewLnb = cookie.getItem("isShownNewLnb");
+        if(isShownNewLnb == null) {
+            isShownNewLnb = "Y";
+            cookie.setItem("isShownNewLnb", isShownNewLnb, 3650, "", "/");
+            $("._isNew").addClass("is_new");
+        }
+
+        {
+            var footerLogin = jQuery(document).find('._footer_login');
+            if(footerLogin <= 0) {
+                return;
+            }
+
+            // 디바이스에 따라 로그인, 로그아웃 URL 분기
+            var loginUrl = "https://nid.naver.com/nidlogin.login";
+            var logoutUrl = "https://nid.naver.com/nidlogin.logout?";
+            if (news.Util.getAgentInfo().bMobileOrTablet) {
+                loginUrl = "https://nid.naver.com/nidlogin.login?svctype=262144";
+                logoutUrl = "https://nid.naver.com/nidlogin.logout?svctype=262144&";
+            }
+
+            if(news.LoginAssistor.isLoginUser()) {
+                footerLogin.prepend('<a href="javascript:news.Util.logout(\''+logoutUrl+'url=\'+encodeURIComponent(location.href));" class="u_ftlk" id="news_logout" onclick="nclk(event,\'fot.logout\',\'\',\'\');" >로그아웃</a>')
+            }else {
+                footerLogin.prepend('<a href="'+loginUrl+'" class="u_ftlk" id="news_login" onclick="nclk(event,\'fot.login\',\'\',\'\');" >로그인</a>')
+            }
+        }
+    }
+});
+</script>
+
+
+
+    
+    
+    	<script src="https://nolimit.like.naver.com/js/reaction/dist/reaction.min.js?20190502"></script>
+<script>
+    function getNewsLiveViewerOffsetHeight() {
+        return $('._press_header').outerHeight() + $('._press_tab_scroll').outerHeight();
+    }
+
+    function init() {
+        /* LNB */
+        var pressHomeTopLnb = initPressHomeTopLnb();
+        /* LNB */
+
+        /* 탭 */
+        var pressHomeTab = initPressHomeTab({
+            floating: pressHomeTopLnb.floating
+        });
+        /* 탭 */
+
+        function initPressHomeProfile() {
+            new news.PressHomeProfile()
+                .init({
+                    billboardChartLibUrl: billboardChartLibUrl,
+                    templateData: profileData
+                })
+                .on('toggleProfile', function(){
+                    pressHomeTopLnb.floating.updateBoundary();
+                });
+        }
+
+        function initChannelPlugin() {
+            new news.ChannelPlugin()
+                .init({
+                    channelPluginApiDomain: "https://api.channel-plugin.naver.com",
+                    followLayerAutoCloseMs: 5000,
+                    nclickPrefix: 'prs_hom'
+                });
+        }
+
+        function getLocationQueryParams() {
+            var params = {};
+            var kv = [];
+            var queryString = location.search && location.search.substr(1);
+            var paramStrList;
+            if (queryString) {
+                paramStrList = queryString.split("&");
+                for (var i = 0, len = paramStrList.length; i < len; i++) {
+                    kv = paramStrList[i].split("=");
+                    params[kv[0]] = kv[1];
+                }
+            }
+
+            return params;
+        }
+
+        
+            var domain = "https://media.naver.com";
+            var liveViewer = new PressHomeMainManager.NaverTvAppLiveViewer('._press_live_viewer_wrapper', {
+                metaIds: "121778",
+                serviceType: "NEWS",
+                urlForNewsLive: domain + "/press/052/live",
+                url: domain + "/press/052/live" + "?isWebPlayer=true"
+            });
+            var isOpened = true;
+            var agentInfo = news.Util.getAgentInfo();
+            var isAosNaverApp = agentInfo.bIsAndroid && agentInfo.bIsNaverApp && agentInfo.bMobileOrTablet;
+            var isLiveViewer = agentInfo.bIsLiveViewer;
+            var queryString = getLocationQueryParams();
+            var isOnlyWebPlayer = queryString.isWebPlayer === 'true';
+
+            if (!isOnlyWebPlayer && isAosNaverApp && isOpened && window.inapphome) {
+                try {
+                    liveViewer.initLiveAppViewer();
+                    if (history.length > 1) {
+                        history.back();
+                    } else if (history.length === 1) {
+                        var officeId = '052';
+                        location.replace('/press/' + officeId);
+                    }
+                } catch (e) {
+                    initWebViewer();
+
+                }
+            } else if(isLiveViewer) {
+                // nothing
+            } else {
+                initWebViewer();
+            }
+
+            function initWebViewer() {
+                initShare();
+                initPressList();
+                initPressHomeProfile();
+                initChannelPlugin();
+                liveViewer.showWebViewer();
+                if (isOpened) {
+                    new PressHomeMainManager.NaverTvLive('._press_live_wrapper', {
+                        staticResourceDomain: 'https://ssl.pstatic.net/static.news/mnews/resources/20221208_025917'
+                    });
+                }
+                new PressHomeMainManager.NaverTvLiveViewCount('._view_count');
+                initComment();
+                initLike();
+            }
+        
+    }
+</script>
+
+    
+
+	<script>
+    var gnb_service = 'news';
+    var gnb_logout = encodeURIComponent(location.href);
+    var gnb_template = 'gnb_utf8';
+    var gnb_brightness = 1;
+
+    doAfterLoadEnd(function () {
+        try {
+            GlobalMPUrlManager.init();
+        } catch (e) {}
+    });
+
+    doAfterLoadEnd(function() {
+        if (!document.querySelector('#gnb') || isMobileDevice() === true) { 
+            return;
+        }
+        
+        var gnb_src = "https://ssl.pstatic.net/static.gn/templates/gnb_utf8?2022121122";
+
+        // GnbHelper를 이용하여 GNB Layer를 닫을 수 있도록 지원한다.
+        if (window.jindo) {
+            jindo.LazyLoading.load(
+                gnb_src,
+                function() {
+                    try {
+                        getGNB();
+                    } catch(e) {}
+                },
+                'utf-8'
+            );
+
+            jindo.$Fn(function (oEvent) {
+                
+                GnbHelper.attachClick(oEvent.$value().target);
+            }).attach(document, 'click');
+        } else if (window.jQuery) {
+            new news.JsLoader().
+                load(
+                    [gnb_src],
+                    function() {
+                        try {
+                            getGNB();
+                        } catch(e) {}
+                    }
+                );
+
+            $(document).on("click", function(event) {
+                GnbHelper.attachClick(event.target);
+            });
+        }
+    });
+</script>
+
+<script>
+doAfterLoadEnd(function() {
+    try {
+        new SearchAutoComplete({
+            content: document.querySelector("._search_content"),
+            contentToggleBtn: document.querySelector("._search_content_toggle_btn"),
+            isMobile: isMobileDevice(),
+            nClickType: "newsM"
+        });
+    } catch(e) {}
+});
+</script>
+	<!-- LCS -->
+	
+
+
+
+<script type="text/javascript">
+
+function initMa(){
+    var data = {
+        "service": "news",
+        "baseInfo": {
+            "category": (function(){
+                
+                var result = "언론사홈";
+
+                if(result !== ""){
+                    return result;
+                }
+                try{
+                    
+                    return document.querySelector('meta[property="og:title"]')
+                        .getAttribute('content')
+                        .replace(/[\s]*:+[\s]*네이버[\s]*뉴스/, '');
+                }catch(e){
+                    return "";
+                }
+            })()
+        },
+        "extraInfo": {}
+    };
+
+    
+    data.extraInfo.officeId = "052";
+    
+
+    try{
+        ma.init({
+            api: "https://ma.news.naver.com/l",
+            data: data
+        });
+    }catch(e){}
+}
+</script>
+
+
+<script type="text/javascript">
+
+if(typeof BMR !== "undefined"){
+	BMR.run('https://sp.naver.com/sp');
+}
+
+
+
+var eventType = "onpageshow" in window ? "pageshow" : "load";
+jQuery(window).on(eventType, function() {
+
+
+
+lcs_do();
+
+
+    try{
+        initMa();
+    }catch(e){}
+});
+</script>
+
+
+	<!-- //LCS -->
+</body>
+</html>
